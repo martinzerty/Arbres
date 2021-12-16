@@ -1,6 +1,6 @@
 def prefixe(a):
-    if a[0] != '':
-        prefixe(a[0])
-    print(a)
-    if a[1] != '':
-        prefix(a[1])
+    print(a.valeur)
+    if a.enfant_gauche:
+        prefixe(a.enfant_gauche)
+    if a.enfant_droit:
+        prefixe(a.enfant_droit)
