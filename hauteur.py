@@ -1,11 +1,11 @@
 def hauteur(a):
-    if a[0] == '' and a[1] == '':
+    if not a.enfant_gauche and not a.enfant_droit:
         return 1
-    elif a[0] == '':
-        return 1+hauteur(a[1])
-    elif a[1] == '':
-        return 1+hauteur(a[0])
+    elif not a.enfant_gauche:
+        return 1+hauteur(a.enfant_droit)
+    elif not a.enfant_droit:
+        return 1+hauteur(a.enfant_gauche)
     else:
-        return 1+max(hauteur(a[1]), hauteur(a[0]))
+        return 1+max(hauteur(a.enfant_droit), hauteur(a.enfant_gauche))
     
     
